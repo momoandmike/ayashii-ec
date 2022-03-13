@@ -12,8 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $price = $_POST["price"];
     $gazou = $_FILES["gazou"];
     $explanation = $_POST["explanation"];
-    //var_dump($_FILES);
-    //var_dump($explanation);
+
     // //（2）$_FILEに情報があれば（formタグからpost送信されていれば）以下の処理を実行する
     if (!empty($_FILES)) {
         //echo "filearuyo";

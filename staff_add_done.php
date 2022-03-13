@@ -6,8 +6,7 @@ $name = '';
 $password = '';
 $errors = [];
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    //$name = filter_input(INPUT_POST, 'name');
-    //$password = filter_input(INPUT_POST, 'password');
+
     $name = $_POST["name"];
     $password = $_POST["password"];
     // バリデーション
@@ -31,36 +30,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 
 <body>
-
-    <?php
-    //     try {
-
-    // require_once("common.php");
-
-    //     $post = sanitize($_POST);
-    //     $name = $post["name"];
-    //     $pass = $post["pass"];
-
-    //     $dsn = "mysql:host=localhost;dbname=ayashii_db;charset=utf8";
-    //     $user = "root";
-    //     $password = "";
-    //     $dbh = new PDO($dsn, $user, $password);
-    //     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-    //     $sql = "INSERT INTO mst_staff(name, password) VALUES(?,?)";
-    //     $stmt = $dbh->prepare($sql);
-    //     $data[] = $name;
-    //     $data[] = $pass;
-    //     $stmt->execute($data);
-
-    //     $dbh = null;
-    //     } 
-    //     catch (Exception $e) {
-    //         //print "只今障害が発生しております。<br><br>";
-    //         print "<a href='staff_login.html'>ログイン画面へ</a>";
-    //     }
-    // 
-    ?>
 
     スタッフを追加しました。<br><br>
     <a href="staff_list.php">スタッフ一覧へ</a>

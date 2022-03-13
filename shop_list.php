@@ -51,11 +51,7 @@
             print "</a>";
             print "<br><br>";
         }
-        //print "<br>";
-    //} catch (Exception $e) {
-        //print "只今障害が発生しております。<br><br>";
-        //print "<a href='staff_login.html'>ログイン画面へ</a>";
-    //}
+        
     ?>
 
 </body>

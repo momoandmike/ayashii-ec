@@ -1,17 +1,3 @@
-<?php
-
-//session_start();
-//session_regenerate_id(true);
-//if (isset($_SESSION["login"]) === false) {
-    //print "ログインしていません。<br><br>";
-    //print "<a href='staff_login.html'>ログイン画面へ</a>";
-    //exit();
-//} else {
-    //print $_SESSION["name"] . "さんログイン中";
-    //print "<br><br>";
-//}
-?>
-
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -51,16 +37,7 @@
         $data[] = $comments;
         $stmt->execute($data);
 
-        $dbh = null;
-    } catch (Exception $e) {
-        print "只今障害が発生しております。<br><br>";
-        print "<a href='../staff_login/staff_login.html'>ログイン画面へ</a>";
-        exit();
-    }
     ?>
-
-    商品を追加しました。<br><br>
-    <a href="product_list.php">スタッフ一覧へ</a>
 
 </body>
 

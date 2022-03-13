@@ -1,15 +1,23 @@
 <?php
 
-//session_start();
-//session_regenerate_id(true);
-//if(isset($_SESSION["login"]) === false) {
-//    print "ログインしていません。<br><br>";
-//    print "<a href='staff_login.html'>ログイン画面へ</a>";
-//    exit();
-//} else {
-//    print $_SESSION["name"]."さんログイン中";
-//    print "<br><br>";
-//}
+require_once __DIR__ . '/functions.php';
+
+$name = '';
+$password = '';
+$errors = [];
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    //$name = filter_input(INPUT_POST, 'name');
+    //$password = filter_input(INPUT_POST, 'password');
+    $name = $_POST["name"];
+    $password = $_POST["password"];
+    // バリデーション
+    //$errors = staff_add_done_validate($name, $password);
+    if (empty($errors)) {
+        insert_staff($name, $password);
+        header('Location: staff_login_show.php');
+        exit;
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -24,37 +32,38 @@
 
 <body>
 
-<?php
-    try {
+    <?php
+    //     try {
 
-require_once("common.php");
+    // require_once("common.php");
 
-    $post = sanitize($_POST);
-    $name = $post["name"];
-    $pass = $post["pass"];
+    //     $post = sanitize($_POST);
+    //     $name = $post["name"];
+    //     $pass = $post["pass"];
 
-    $dsn = "mysql:host=localhost;dbname=ayashii_db;charset=utf8";
-    $user = "root";
-    $password = "";
-    $dbh = new PDO($dsn, $user, $password);
-    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    //     $dsn = "mysql:host=localhost;dbname=ayashii_db;charset=utf8";
+    //     $user = "root";
+    //     $password = "";
+    //     $dbh = new PDO($dsn, $user, $password);
+    //     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $sql = "INSERT INTO mst_staff(name, password) VALUES(?,?)";
-    $stmt = $dbh->prepare($sql);
-    $data[] = $name;
-    $data[] = $pass;
-    $stmt->execute($data);
+    //     $sql = "INSERT INTO mst_staff(name, password) VALUES(?,?)";
+    //     $stmt = $dbh->prepare($sql);
+    //     $data[] = $name;
+    //     $data[] = $pass;
+    //     $stmt->execute($data);
 
-    $dbh = null;
-    } 
-    catch (Exception $e) {
-        //print "只今障害が発生しております。<br><br>";
-        print "<a href='staff_login.html'>ログイン画面へ</a>";
-    }
-?>
+    //     $dbh = null;
+    //     } 
+    //     catch (Exception $e) {
+    //         //print "只今障害が発生しております。<br><br>";
+    //         print "<a href='staff_login.html'>ログイン画面へ</a>";
+    //     }
+    // 
+    ?>
 
-スタッフを追加しました。<br><br>
-<a href="staff_list.php">スタッフ一覧へ</a>
+    スタッフを追加しました。<br><br>
+    <a href="staff_list.php">スタッフ一覧へ</a>
 
 </body>
 

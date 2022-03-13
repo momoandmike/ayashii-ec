@@ -1,17 +1,3 @@
-<?php
-//session_start();
-//session_regenerate_id(true);
-//if(isset($_SESSION["login"]) === false) {
-//    print "ログインしていません。<br><br>";
-//    print "<a href='staff_login.html'>ログイン画面へ</a>";
-//    exit();
-//} else {
-//    print $_SESSION["name"]."さんログイン中";
-//    print "<br><br>";
-//}
-//
-?>
-
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -29,10 +15,10 @@
         <input type="text" name="name">
         <br><br>
         パスワード<br>
-        <input type="password" name="pass">
+        <input type="password" name="password">
         <br><br>
         パスワード再入力<br>
-        <input type="password" name="pass2">
+        <input type="password" name="password2">
         <br><br>
         <input type="button" onclick="history.back()" value="戻る">
         <input type="submit" value="OK">
